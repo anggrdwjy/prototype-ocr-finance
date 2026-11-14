@@ -1,4 +1,4 @@
-# AI OCR Finance — Production
+## prototype OCR finance
 
 Sistem pencatatan invoice & nota pengeluaran: foto nota → OCR → klasifikasi OPEX / CAPEX → validasi → approval → laporan + export CSV.
 
@@ -7,6 +7,22 @@ Sistem pencatatan invoice & nota pengeluaran: foto nota → OCR → klasifikasi 
 ```bash
 cp .env.example .env   # isi JWT_SECRET, POSTGRES_PASSWORD, INIT_CFO_*
 docker compose up --build
+```
+
+Buat random password dari openssl :
+
+```
+openssl rand -base64 32 (32 karakter random)
+
+Hasil :
+Cy0TO8SytowkjmDuSH36pel7kCuqs2F5mGZIiEcUBLw=
+```
+
+```
+openssl rand -base64 16 (16 karakter random)
+
+Hasil :
+GXQqA56XrqvQwOv99x4HxA==
 ```
 
 - Frontend: http://localhost:3000
@@ -68,7 +84,8 @@ CFO pertama dibuat otomatis dari `INIT_CFO_EMAIL` / `INIT_CFO_PASSWORD` saat DB 
 - Jangan commit `.env`. Backup volume `postgres_data` berkala.
 - Foto harus tegak & terang agar OCR akurat. Koreksi hasil OCR sebelum simpan.
 
-## Dokumen Bisnis
+## Lisensi
 
-Lihat `PRG_AI_OCR_Finance_Production.docx` untuk requirement lengkap.
-# prototype-ocr-finance
+Proyek ini dilisensikan di bawah **MIT License** — bebas dipakai, diubah, dan dibagikan, termasuk untuk keperluan komersial, selama menyertakan pemberitahuan hak cipta dan lisensi ini.
+
+Lihat file lengkapnya di [`LICENSE`](LICENSE).

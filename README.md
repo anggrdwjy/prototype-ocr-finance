@@ -1,4 +1,4 @@
-## prototype OCR finance
+## Prototype OCR finance
 
 Sistem pencatatan invoice & nota pengeluaran: foto nota → OCR → klasifikasi OPEX / CAPEX → validasi → approval → laporan + export CSV.
 

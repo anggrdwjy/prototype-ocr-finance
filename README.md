@@ -52,7 +52,7 @@ Administrator/CFO pertama dibuat otomatis dari `INIT_CFO_EMAIL` / `INIT_CFO_PASS
 
 ```
 ├── docker-compose.yml
-├── .env.example
+├── .env
 ├── db/init.sql
 ├── backend/
 │   ├── Dockerfile

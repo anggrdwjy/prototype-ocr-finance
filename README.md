@@ -1,8 +1,8 @@
-## Prototype OCR finance
+# Prototype OCR finance
 
 Sistem pencatatan invoice & nota pengeluaran: foto nota → OCR → klasifikasi OPEX / CAPEX → validasi → approval → laporan + export CSV.
 
-## Jalankan
+#### Jalankan
 
 ```bash
 cp .env.example .env   # isi JWT_SECRET, POSTGRES_PASSWORD, INIT_CFO_*
@@ -16,9 +16,7 @@ openssl rand -base64 32 (32 karakter random)
 
 Hasil :
 Cy0TO8SytowkjmDuSH36pel7kCuqs2F5mGZIiEcUBLw=
-```
 
-```
 openssl rand -base64 16 (16 karakter random)
 
 Hasil :
@@ -28,9 +26,9 @@ GXQqA56XrqvQwOv99x4HxA==
 - Frontend: http://localhost:3000
 - Health: http://localhost:8000/health
 
-CFO pertama dibuat otomatis dari `INIT_CFO_EMAIL` / `INIT_CFO_PASSWORD` saat DB masih kosong. Setelah login, hapus nilai tersebut dari `.env` dan buat akun lain lewat menu **Kelola Akun**.
+Administrator/CFO pertama dibuat otomatis dari `INIT_CFO_EMAIL` / `INIT_CFO_PASSWORD` saat DB masih kosong. Setelah login, hapus nilai tersebut dari `.env` dan buat akun lain lewat menu **Kelola Akun**.
 
-## Role
+#### Role
 
 | Role | Buat Dokumen | Hapus Dokumen | Approve | Buat Akun / Edit Privilege |
 |------|--------------|---------------|---------|----------------------------|
@@ -42,7 +40,7 @@ CFO pertama dibuat otomatis dari `INIT_CFO_EMAIL` / `INIT_CFO_PASSWORD` saat DB 
 - Finance > Rp 50 jt harus CFO.
 - CFO tidak bisa hapus / demote dirinya sendiri. Minimal 1 CFO aktif dijaga.
 
-## Fitur
+#### Fitur
 
 - **OCR:** Tesseract lokal (offline). Foto tidak keluar server. JPG / PNG / PDF, maks 20 MB.
 - **Klasifikasi:** OPEX / CAPEX + CoA, bisa dikoreksi manual. Validasi PPN 11%, total, duplikasi, budget.
@@ -50,7 +48,7 @@ CFO pertama dibuat otomatis dari `INIT_CFO_EMAIL` / `INIT_CFO_PASSWORD` saat DB 
 - **Export CSV:** Dashboard & Laporan → Export CSV Keseluruhan (24 kolom).
 - **Kelola Akun (CFO):** Buat akun, edit role, reset password, aktif/nonaktif, hapus akun.
 
-## Struktur
+#### Struktur
 
 ```
 ├── docker-compose.yml
@@ -77,13 +75,18 @@ CFO pertama dibuat otomatis dari `INIT_CFO_EMAIL` / `INIT_CFO_PASSWORD` saat DB 
         └── index.css
 ```
 
-## Catatan Production
+#### Catatan Production
 
 - `JWT_SECRET` wajib min 32 karakter, jangan pakai nilai contoh.
 - `CORS_ORIGINS` isi domain frontend production.
 - Jangan commit `.env`. Backup volume `postgres_data` berkala.
 - Foto harus tegak & terang agar OCR akurat. Koreksi hasil OCR sebelum simpan.
 
+#### Support
+
+* [:octocat: Follow me on GitHub](https://github.com/anggrdwjy)
+* [🔔 Subscribe me on Youtube](https://www.youtube.com/@anggarda.wijaya)
+  
 ## Lisensi
 
 Proyek ini dilisensikan di bawah **MIT License** — bebas dipakai, diubah, dan dibagikan, termasuk untuk keperluan komersial, selama menyertakan pemberitahuan hak cipta dan lisensi ini.
